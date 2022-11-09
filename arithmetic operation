@@ -1,0 +1,16 @@
+%{
+float 01=0,02=0,ans=0;
+char opr;
+int f1=0,f2=0;
+void eval();
+%}
+
+%%
+DIGIT [0-9]
+NUM [DIGIT]*[\.{DIGIT}*]?
+p [+\-*/]
+%%
+
+{NUM} if{(f1==0);
+  {
+  01=atof(yytext)
